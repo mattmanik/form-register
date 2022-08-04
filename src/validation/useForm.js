@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import validate from './validation'
 
-function useForm(callback, validate) {
+
+function useForm(callback) {
 
     const [errors, setErrors] = useState({});
     const [data, setData] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    useEffect(() => {
-        if (Object.keys(errors).length === 0 && isSubmitting) {
-            callback();
-        }
-    }, [errors]);
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -22,13 +18,14 @@ function useForm(callback, validate) {
     const handleChange = (event) => {
         event.persist();
         setData(data => ({ ...data, [event.target.name]: event.target.value }));
-      };
+    };
 
     return {
         handleChange,
         handleSubmit,
         data,
         errors,
+        isSubmitting
     }
 }
 
