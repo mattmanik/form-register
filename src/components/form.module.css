@@ -1,0 +1,25 @@
+.inputtext {
+    height: 25px;
+    border-radius: 25px;
+    width: 350px;
+    padding: 10px;
+    padding-left: 40px;
+    margin-left: 15px;
+    margin: 10px;
+}
+
+.inputtext:focus {
+    outline: 2px solid var(--primary);
+}
+.dropdown:focus {
+    outline: 2px solid var(--primary);
+}
+
+.dropdown{
+    margin: 11px;
+    min-height: 44px;
+    min-width: 410px;
+    border-radius: 25px;
+    padding: 0px 40px;
+}
+
